@@ -1,4 +1,4 @@
-Carrea(Codigo[PK], Nombre)
+Carrera(Codigo[PK], Nombre)
 Ramo(Codigo[PK], Nombre, Carrera[FK])
 Alumno(Matricula[PK], Nombre, Carrera[FK])
 Comentario(Id[PK], Texto, Fecha, Puntuación)
@@ -14,3 +14,73 @@ EncuestaSobreProfesor(idEncuesta[Fk], RutProfesor[Fk])
 ProfesorTitular(RutProfesor[FK])
 ProfesorAsistente(RutProfesor[FK])
 ProfesorAsociado(RutProfesor[Fk])
+
+
+
+************************
+	Normalización
+************************
+
+Carrera(Codigo[PK], Nombre)
+	PK(Carrera) = {Codigo} // Clave primaria
+
+	DF1 {Codigo} -> {Nombre} // DF Total
+
+	Atributos primos : {Codigo}
+	Atributos no primos : {Nombre}
+
+FN 1 - Cumple
+FN 2 - Cumple
+FN 3 - Cumple
+
+
+Ramo(Codigo[PK], Nombre, Carrera[FK])
+	PK(Carrera) = {Codigo} // Clave primaria
+
+	DF1 {Codigo} -> {Nombre, Carrera} // DF Total
+FN 1 - Cumple
+FN 2 - Cumple
+FN 3 - Cumple
+
+
+
+
+Alumno(Matricula[PK], Nombre, Carrera[FK])
+	PK(Alumno) -> {Matricula} // Clave primaria
+
+	DF1 {Matricula} -> {Nombre, Carrera}
+FN 1 - Cumple
+FN 2 - Cumple
+FN 3 - Cumple
+
+
+
+
+
+Comentario(Id[PK], Texto, Fecha, Puntuación)
+	PK(Comentario) -> {Id} // Clave primaria
+	DF1 {Id} -> {Texto, Fecha, Puntuación} // Total
+
+	FN 1 - Cumple
+
+
+	Atributos no primos : {Fecha, Puntuación, Texto}
+		/* Todos tienen DF Total para todas las claves*/
+
+	FN 2 - Cumple
+	FN 3 - Cumple
+
+
+AlumnoRealizaComentario(Matricula[FK], idComentario[Fk])
+AlumnoPuntuaComentario(Matricula[Fk], idComentario[FK])
+ComentarioSobreHabilidad(idComentario[FK], idHabilidad[FK])
+Habilidad(Id[PK], Nombre, Descripción)
+Encuesta(id[PK], Observaciones)
+AlumnoRespondeEncuesta(Matricual[FK], idEncuesta[FK])
+Profesor(Rut[PK], Nombre, Departamento, PuntuacionEvaluacion)
+AlumnoComentaProfesor(Matricula[Fk], RutProfesor[Fk],TextoComentario)
+EncuestaSobreProfesor(idEncuesta[Fk], RutProfesor[Fk])
+ProfesorTitular(RutProfesor[FK])
+ProfesorAsistente(RutProfesor[FK])
+ProfesorAsociado(RutProfesor[Fk])
+

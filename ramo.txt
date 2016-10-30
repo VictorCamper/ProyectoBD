@@ -1,0 +1,20 @@
+1,Calculo
+2,Fisica
+3,Quimica
+4,Comunicacion Oral y Escrita
+5,Introducion a la Programacion
+6,Programacion
+7,Solucion Algoritmica de Problemas
+8,Programacion Avanzada
+9,Proyecto de Programacion
+10,Diseno de Bases de Datos
+11,Recursos Humanos
+12,Modelos Discretos
+13,Ingles
+14,Intruccion a la Teoria de Sistemas
+15,Ecuaciones Diferenciales
+16,Algebra Lineal
+17,Requisitos de Software
+18,Interfaz Humano Computador
+19,Algoritmos y Estructuras de Datos
+20,Trabajo en Equipo y Liderazgo

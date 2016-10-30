@@ -59,8 +59,8 @@ CREATE TABLE ComentarioHabilidad
 (
 	idComentario integer NOT NULL,
 	idHabilidad integer NOT NULL,
-	FOREIGN KEY (idComentario) REFERENCES Comentario(idComentario) ON DELETE CASCADE,
-	FOREIGN KEY (idHabilidad) REFERENCES Habilidad(idHabilidad) ON DELETE CASCADE
+	FOREIGN KEY (idComentario) REFERENCES Comentario(idComentario) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (idHabilidad) REFERENCES Habilidad(idHabilidad) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Encuesta
@@ -83,8 +83,8 @@ CREATE TABLE AlumnoEncuesta
 (
 	matricula integer NOT NULL,
 	idEncuesta integer NOT NULL,
-	FOREIGN KEY (matricula) REFERENCES Alumno(matricula) ON DELETE CASCADE,
-	FOREIGN KEY (idEncuesta) REFERENCES Encuesta(idEncuesta) ON DELETE CASCADE
+	FOREIGN KEY (matricula) REFERENCES Alumno(matricula) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (idEncuesta) REFERENCES Encuesta(idEncuesta) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE AlumnoComentaProfesor
@@ -92,32 +92,32 @@ CREATE TABLE AlumnoComentaProfesor
 	matricula integer NOT NULL,
 	rutProfesor varchar(12) NOT NULL,
 	textoComentario varchar(500),
-	FOREIGN KEY (matricula) REFERENCES Alumno(matricula) ON DELETE CASCADE,
-	FOREIGN KEY (rutProfesor) REFERENCES Profesor(rutProfesor) ON DELETE CASCADE
+	FOREIGN KEY (matricula) REFERENCES Alumno(matricula) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (rutProfesor) REFERENCES Profesor(rutProfesor) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE EncuestaSobreProfesor
 (
 	idEncuesta integer NOT NULL,
 	rutProfesor varchar(12) NOT NULL,
-	FOREIGN KEY (idEncuesta) REFERENCES Encuesta(idEncuesta) ON DELETE CASCADE,
-	FOREIGN KEY (rutProfesor) REFERENCES Profesor(rutProfesor) ON DELETE CASCADE	
+	FOREIGN KEY (idEncuesta) REFERENCES Encuesta(idEncuesta) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (rutProfesor) REFERENCES Profesor(rutProfesor) ON DELETE CASCADE ON UPDATE CASCADE	
 );
 
 CREATE TABLE ProfesorTitular
 (
 	rutTitular varchar(12) UNIQUE NOT NULL,
-	FOREIGN KEY (rutTitular) REFERENCES Profesor(rutProfesor)  ON DELETE CASCADE
+	FOREIGN KEY (rutTitular) REFERENCES Profesor(rutProfesor)  ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE ProfesorAsistente
 (
 	rutAsistente varchar(12) UNIQUE NOT NULL,
-	FOREIGN KEY (rutAsistente) REFERENCES Profesor(rutProfesor) ON DELETE CASCADE 
+	FOREIGN KEY (rutAsistente) REFERENCES Profesor(rutProfesor) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE ProfesorAsociado
 (
 	rutAsociado varchar(12) UNIQUE NOT NULL,
-	FOREIGN KEY (rutAsociado) REFERENCES Profesor(rutProfesor) ON DELETE CASCADE
+	FOREIGN KEY (rutAsociado) REFERENCES Profesor(rutProfesor) ON DELETE CASCADE ON UPDATE CASCADE
 );

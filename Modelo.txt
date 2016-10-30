@@ -1,19 +1,19 @@
-Carrera(Codigo[PK], Nombre)
-Ramo(Codigo[PK], Nombre, Carrera[FK])
-Alumno(Matricula[PK], Nombre, Carrera[FK])
-Comentario(Id[PK], Texto, Fecha, Puntuación)
-AlumnoRealizaComentario(Matricula[FK], idComentario[Fk])
-AlumnoPuntuaComentario(Matricula[Fk], idComentario[FK])
+Carrera(Codigo[PK], Nombre)   												// Codigo único
+Ramo(Codigo[PK], Nombre, Carrera[FK])										// Codigo único
+Alumno(Matricula[PK], Nombre, Carrera[FK])									// Matricula única
+Comentario(Id[PK], Texto, Fecha, Puntuación)								// Id único
+AlumnoRealizaComentario(Matricula[FK], idComentario[Fk])					
+AlumnoPuntuaComentario(Matricula[Fk], idComentario[FK], Puntuacion)
 ComentarioSobreHabilidad(idComentario[FK], idHabilidad[FK])
-Habilidad(Id[PK], Nombre, Descripción)
-Encuesta(id[PK], Observaciones)
-AlumnoRespondeEncuesta(Matricual[FK], idEncuesta[FK])
-Profesor(Rut[PK], Nombre, Departamento, PuntuacionEvaluacion)
-AlumnoComentaProfesor(Matricula[Fk], RutProfesor[Fk],TextoComentario)
-EncuestaSobreProfesor(idEncuesta[Fk], RutProfesor[Fk])
-ProfesorTitular(RutProfesor[FK])
-ProfesorAsistente(RutProfesor[FK])
-ProfesorAsociado(RutProfesor[Fk])
+Habilidad(Id[PK], Nombre, Descripción)										// Id único
+Encuesta(id[PK], Observaciones)												// id único
+AlumnoRespondeEncuesta(Matricual[FK], idEncuesta[FK])						
+Profesor(Rut[PK], Nombre, Departamento, PuntuacionEvaluacion)				// Rut único
+AlumnoComentaProfesor(Matricula[Fk], RutProfesor[Fk],TextoComentario)		
+EncuestaSobreProfesor(idEncuesta[Fk], RutProfesor[Fk])						
+ProfesorTitular(RutProfesor[FK])											// Id único
+ProfesorAsistente(RutProfesor[FK])											// Id único
+ProfesorAsociado(RutProfesor[Fk])											// Id único
 
 
 
@@ -72,15 +72,102 @@ Comentario(Id[PK], Texto, Fecha, Puntuación)
 
 
 AlumnoRealizaComentario(Matricula[FK], idComentario[Fk])
-AlumnoPuntuaComentario(Matricula[Fk], idComentario[FK])
+	PK(AlumnoRealizaComentario) -> {Matricula, IdComentario} // Secundaria (SuperClave)
+	PK(AlumnoRealizaComentario) -> {IdComentario} // Primaria (Minimal)
+
+	DF1 {IdComentario} -> {Matricula}
+
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
+
+
+
+
+AlumnoPuntuaComentario(Matricula[Fk], idComentario[FK], Puntuacion)
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
+
+
 ComentarioSobreHabilidad(idComentario[FK], idHabilidad[FK])
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
+
 Habilidad(Id[PK], Nombre, Descripción)
+	PK(Habilidad) ->  {Id} // Primaria
+
+	DF1 {Id} -> {Nombre, Descripción} // Total
+
+	FN 1 - Cumple
+
+	Atrubutos Primos : {Id}
+	Atributos No Primos : {Nombre, Descripción}
+
+	FN 2 - Cumple
+	FN 3 - Cumple
+
 Encuesta(id[PK], Observaciones)
+
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
 AlumnoRespondeEncuesta(Matricual[FK], idEncuesta[FK])
+	
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
+
+
 Profesor(Rut[PK], Nombre, Departamento, PuntuacionEvaluacion)
+	
+	PK(Profesor) -> {Rut} // Primaria
+	
+	DF1 {Rut} -> {Nombre, Departamento, PuntuacionEvaluacion} 	
+
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
+
 AlumnoComentaProfesor(Matricula[Fk], RutProfesor[Fk],TextoComentario)
+	PK(AlumnoComentaProfesor) -> {Matricula, RutProfesor} // Primaria (SuperClave) // Clave minimal
+
+	DF1 {Matricula, RutProfesor} -> {TextoComentario} // Total
+
+	Atributos primos : {Matricula, RutProfesor}
+	Atrinutos no primos : {TextoCoemtario}
+
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
+
 EncuestaSobreProfesor(idEncuesta[Fk], RutProfesor[Fk])
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
+
 ProfesorTitular(RutProfesor[FK])
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
 ProfesorAsistente(RutProfesor[FK])
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
 ProfesorAsociado(RutProfesor[Fk])
+	FN 1 - Cumple
+	FN 2 - Cumple
+	FN 3 - Cumple
+
 

@@ -18,7 +18,7 @@ CREATE TABLE Alumno
 	nombre varchar(256),
 	codCarrera integer NOT NULL,
 	PRIMARY KEY (matricula),
-	FOREIGN KEY (codCarrera) REFERENCES Carrera(codCarrera) ON DELETE CASCADE
+	FOREIGN KEY (codCarrera) REFERENCES Carrera(codCarrera) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Comentario
@@ -34,8 +34,8 @@ CREATE TABLE AlumnoRealizaComentario
 (
  	matricula integer NOT NULL,
  	idComentario integer NOT NULL,
- 	FOREIGN KEY (matricula) REFERENCES Alumno(matricula) ON DELETE CASCADE,
- 	FOREIGN KEY (idComentario) REFERENCES Comentario(idComentario) ON DELETE CASCADE
+ 	FOREIGN KEY (matricula) REFERENCES Alumno(matricula) ON DELETE CASCADE ON UPDATE CASCADE,
+ 	FOREIGN KEY (idComentario) REFERENCES Comentario(idComentario) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE AlumnoPuntuaComentario
@@ -43,15 +43,15 @@ CREATE TABLE AlumnoPuntuaComentario
  	matricula integer NOT NULL,
  	idComentario integer NOT NULL,
  	puntuacion integer CHECK (puntuacion >= 0 AND puntuacion <= 5),
- 	FOREIGN KEY (matricula) REFERENCES Alumno(matricula) ON DELETE CASCADE,
- 	FOREIGN KEY (idComentario) REFERENCES Comentario(idComentario) ON DELETE CASCADE
+ 	FOREIGN KEY (matricula) REFERENCES Alumno(matricula) ON DELETE CASCADE ON UPDATE CASCADE,
+ 	FOREIGN KEY (idComentario) REFERENCES Comentario(idComentario) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Habilidad
 (
 	idHabilidad integer UNIQUE NOT NULL,
 	nombre varchar(256), 
-	descripcion varchar(50),
+	descripcion varchar(500),
 	PRIMARY KEY (idHabilidad)
 );
 
@@ -63,13 +63,6 @@ CREATE TABLE ComentarioHabilidad
 	FOREIGN KEY (idHabilidad) REFERENCES Habilidad(idHabilidad) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE Encuesta
-(
-	idEncuesta integer UNIQUE NOT NULL,
-	observaciones varchar(500), 
-	PRIMARY KEY (idEncuesta)
-);
-
 CREATE TABLE Profesor
 (
 	rutProfesor varchar(12) UNIQUE NOT NULL,
@@ -78,6 +71,22 @@ CREATE TABLE Profesor
 	puntuacionEvaluacion integer,
 	PRIMARY KEY (rutProfesor)
 );
+
+CREATE TABLE ProfesorHabilidad
+(	
+	rutProfesor varchar(12) NOT NULL,
+	idHabilidad integer NOT NULL,
+	FOREIGN KEY (rutProfesor) REFERENCES Profesor(rutProfesor) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (idHabilidad) REFERENCES Habilidad(idHabilidad) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Encuesta
+(
+	idEncuesta integer UNIQUE NOT NULL,
+	observaciones varchar(500), 
+	PRIMARY KEY (idEncuesta)
+);
+
 
 CREATE TABLE AlumnoEncuesta
 (

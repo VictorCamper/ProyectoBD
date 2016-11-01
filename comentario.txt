@@ -1,0 +1,20 @@
+1,Buen comentario,1/1/2016
+2,Mal comentario, 1/2/2016
+3,Comentario apropiado, 2/2/2016
+4,Comentario random, 3/3/2016
+5,Muy buena habilidad, 3/3/2016
+6,Comentario inventado, 4/4/2016
+7,No se que comentar, 5/5/2016
+8,Algun comentario casual,1/1/2016
+9,Comentario vacio,10/06/2016
+10,No aplica,11/09/2016
+11,Sin comentarios,12/10/2016
+12,Sin creatividad,1/2/2016
+13,El profesor destaca en esta habilidad,3/4/2016
+14,El profesor no cumple con esta habilidad,12/12/2016
+15,No deberia ser obligatorio comentar,10/10/2016
+16,Profesor deficiente,9/9/2016
+17,Profesor altamente calificado,8/8/2016
+18,Profesor recomendable,7/7/2016
+19,Profesor no recomendable,6/6/2016
+20,Nada que decir sobre el profesor,1/9/2016

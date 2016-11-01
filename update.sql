@@ -1,0 +1,16 @@
+UPDATE carrera SET codCarrera = codCarrera + 100 WHERE codCarrera = 1; 
+UPDATE ramo SET codRamo = 1024 WHERE codRamo = 5;
+UPDATE alumno SET matricula = matricula + 2014407000 WHERE codCarrera = 100;
+UPDATE comentario SET texto = 'Excelente' WHERE puntuacion = 5;
+UPDATE alumnorealizacomentario SET matricula = 20 WHERE idComentario = 1;
+UPDATE alumnopuntuacomentario SET puntuacion = 0 WHERE matricula = 2;
+UPDATE habilidad SET descripcion = 'Una habilidad' WHERE idHabilidad = 3;
+UPDATE comentariohabilidad SET idComentario = 20 - idComentario WHERE idHabilidad = 2;
+UPDATE encuesta SET observaciones = 'Algun comentario' WHERE idEncuesta = 15;
+UPDATE profesor SET puntuacionevaluacion = 0 WHERE rutProfesor = '10.000.000-1';
+UPDATE alumnoencuesta SET matricula = matricula + 1 WHERE idEncuesta = 5;
+UPDATE alumnocomentaprofesor SET textoComentario = 'Mal profesor' WHERE rutProfesor = '10.000.000-1';
+UPDATE encuestasobreprofesor SET idEncuesta = idEncuesta + 2 WHERE rutProfesor = '10.000.000-1';
+UPDATE profesortitular SET rutTitular = '11.111.111-1' WHERE rutTitular = '10.000.000-1';
+UPDATE profesorasistente SET rutAsistente = '11.111.111-1' WHERE rutAsistente = '10.000.000-1';
+UPDATE profesorAsociado SET rutAsociado = '11.111.111-1' WHERE rutAsociado = '10.000.000-1';

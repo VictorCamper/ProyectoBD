@@ -15,7 +15,12 @@ for registro in lineas:
 	for value in registro:
 		if count != 0:
 			query += ","
-		query += "\'%s\'" % (value)
+		if sys.argv[2 + count] == 'i':
+			query += "%s" % (value)
+		elif sys.argv[2 + count] == 'v':
+			query += "\'%s\'" % (value)
 		count += 1
 	query += ");"
 	print query
+
+file.close()

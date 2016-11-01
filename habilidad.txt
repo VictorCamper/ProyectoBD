@@ -1,0 +1,5 @@
+1,Conicimiento,Aspecto de un profesor relacionado al conocimiento académico y manejo de la materia.
+2,Pedagogia,Aspecto de un profesor relacionado con como enseña este y si subjetivamente los alumnos le entienden.
+3,Evaluacion,Aspecto de un profesor relacionado en la forma en que realiza los distintos tipos de evaluaciones y si existe algún patrón o consejo en estas. 
+4,Empatia,Aspecto de un profesor relacionado con la predisposición de consultar dudas. Dar algo de ayuda a alumnos en situaciones críticas y a algunos que les dificulte la materia.
+5,Carisma,Aspecto de un profesor relacionado con la predisposición de consultar dudas. Dar algo de ayuda a alumnos en situaciones críticas y a algunos que les dificulte la materia.

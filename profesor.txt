@@ -1,0 +1,20 @@
+01.000.000-0,Cristian Mardones, Matematicas,0
+02.000.000-0,Wilfred Flores,Matematicas,0
+03.000.000-0,Roque Bustamante,Matematicas,0
+04.000.000-0,Claudio del Pino,Matematicas,0
+05.000.000-0,Milton Elgueta,Fisica,0
+06.000.000-0,Walter Bussenius,Fisica,0
+07.000.000-0,Narciso Cerpa,DCC,0
+08.000.000-0,Matt Bardeen,DCC,0
+09.000.000-0,Renzo Angles,DCC,0
+10.000.000-0,Cesar Astudillo,DCC,0
+11.000.000-0,Benjamin Ingram,DCC,0
+12.000.000-0,Rodrigo Paredes,DCC,0
+13.000.000-0,Ruth Garrido,DCC,0
+14.000.000-0,Pablo Rojas,DCC,0
+15.000.000-0,Rodolfo Allendes,DCC,0
+16.000.000-0,Federico Meza,DCC,0
+17.000.000-0,Juan Nanjari,Humanista,0
+18.000.000-0,Veronica Herrazuriz,Humanista,0
+19.000.000-0,Ruben Cortes,Humanista,0
+20.000.000-0,Carmen Covarrubias,Humanista,0
